@@ -354,7 +354,7 @@ class SoftRenderer(DifferentiableRenderer):
                                                  self.light_color_ambient)
         directional_lighting = compute_directional_light(faces_lighting, textures,
                                                          self.light_intensity_directional,
-                                                         self.light_color_directional)
+                                                         self.light_color_directional, self.light_direction)
 
         return (ambient_lighting + directional_lighting) * textures
 
