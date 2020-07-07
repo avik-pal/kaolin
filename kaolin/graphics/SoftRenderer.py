@@ -671,7 +671,7 @@ class SoftRenderer(DifferentiableRenderer):
             if not torch.is_tensor(azimuth):
                 azimuth = torch.tensor([azimuth], dtype=torch.float32)
             self.eye = torch.tensor([
-                distance * torch.cos(elevation) * torch.sin(azimuth),
-                distance * torch.sin(elevation),
-                -distance * torch.cos(elevation) * torch.cos(azimuth),
+                distance * torch.sin(elevation) * torch.cos(azimuth),
+                distance * torch.sin(elevation) * torch.sin(azimuth),
+                distance * torch.cos(elevation),
             ], device=self.device)
